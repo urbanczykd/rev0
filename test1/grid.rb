@@ -1,4 +1,4 @@
-ARR = ("a".."z").to_a + ("A".."Z").to_a
+ARR = ("A".."Z").to_a
 SIZE = ARR.size
 
 def letter
