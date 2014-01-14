@@ -22,8 +22,8 @@ def close
 end
 
 if ARGV[0] && ARGV[1]
-	gen_grid(ARGV[0].to_i, ARGV[1].to_i)
+  gen_grid(ARGV[0].to_i, ARGV[1].to_i)
 else
-	close
+  close
 end
 
