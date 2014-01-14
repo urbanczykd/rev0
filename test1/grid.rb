@@ -1,25 +1,24 @@
-
 ARR = ("a".."z").to_a + ("A".."Z").to_a
 SIZE = ARR.size
 
 def letter
-	ARR[rand(SIZE)]
+  ARR[rand(SIZE)]
 end
 
 def line(len)
-	line = Array.new
-	len.times do
-		line << letter
-	end
-	line.join(" ")
+  line = Array.new
+  len.times do
+    line << letter
+  end
+  line.join(" ")
 end
 
 def gen_grid(x, y)
-	y.times{ puts line(x) }
+  y.times{ puts line(x) }
 end
 
 def close
-	puts "Please provide 2 arguments."
+  puts "Please provide 2 arguments."
 end
 
 if ARGV[0] && ARGV[1]
