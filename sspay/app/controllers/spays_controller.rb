@@ -1,0 +1,2 @@
+class SpaysController < ApplicationController
+end
