@@ -1,1 +1,22 @@
-one
+<ul>
+  <li>1.Create a form asking for the params (uid, pub0 and page)</li>
+  <li>2.Make the request to the API passing the params and the authentication hash</li>
+  <li>3.Get the result from the response.</li>
+  <li>4.Check the returned hash to check that it’s a real response (check signature)</li>
+  <li>5.Render the offers in a view (ERB or HAML)</li>
+  <li>a.If we have offers there we render them (title, thumbnail lowres and payout)</li>
+</ul>
+
+<%= form_tag(spays_path, :method => :post) do |f| %>
+  <%= label_tag "uid" %> :
+  <%= text_field_tag "uid" %><br />
+
+  <%= label_tag "pub0" %> :
+  <%= text_field_tag "pub0" %><br />
+
+  <%= label_tag "page" %> :
+  <%= text_field_tag "page" %><br />
+
+  <%= button_tag "pub0" %>
+
+<% end %>
