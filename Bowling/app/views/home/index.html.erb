@@ -1,0 +1,12 @@
+
+
+<%= form_for(:player, :url => session_path(:player)) do |f| %>
+  <%= f.text_field :email %>
+  <%= f.password_field :password %>
+  <%= f.check_box :remember_me %>
+  <%= f.label :remember_me %>
+  <%= f.submit 'Sign in' %>
+  <%= link_to "Forgot your password?", new_password_path(:player) %>
+<% end %>
+<%= link_to "LOGOUT", destroy_player_session_path, :method => :delete %>
+<%= current_player.present? %>
