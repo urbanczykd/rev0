@@ -1,0 +1,1 @@
+rake get:votes # file is in doc/votes.txt

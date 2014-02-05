@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+  <p>
+    <b>Name:</b>
+    <%= @campaign.name %>
+  </p>
+<p>
+
+<table>
+<th>Candidates:</th>
+<th>All votes</th>
+<th>Errors</th>
+<th>Valid votes</th>
+<th>Invalid</th>
+<% @campaign.candidates.each do |candidate| %>
+  <tr>
+
+    <td><%= candidate[:name] %></td>
+    <td><%= @campaign.all_votes(candidate[:name]) %></td>
+    <td><%= @campaign.valid_errors(candidate[:name]) %></td>
+    <td><%= @campaign.valid_votes(candidate[:name]) %></td>
+    <td><%= @campaign.invalid(candidate[:name]) %></td>
+  </tr>
+<% end %>
+</table>
+</p>
+
+
+<%= link_to 'Back', campaigns_path %>
