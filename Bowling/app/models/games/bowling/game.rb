@@ -18,13 +18,7 @@ module Games
 
       def knock(value)
         if last_strike?
-          if last[:throwns].first == 10
-            # 300 score strike
-            last.knock(value) if last[:throwns].count < 3
-          else
-            raise PinNumberExceeded.new("You can't thrown more then 10 pins") if last.calc + value[:knocked] > 10
-            last.knock(value) if last[:throwns].count < 2
-          end
+          last.knock(value) if last[:throwns].count < 3
         else
           raise PinNumberExceeded.new("You can't thrown more then 10 pins") if last.calc + value[:knocked] > 10
           last.knock(value)
@@ -40,11 +34,11 @@ module Games
       private
 
       def last_frame?
-        count == 10
+        count == MAX_FRAMES
       end
 
       def last_strike?
-        last[:throwns].first == 10
+        last[:throwns].first == MAX_PINS
       end
 
       def recalculate_scores
