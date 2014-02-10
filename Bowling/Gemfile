@@ -13,6 +13,7 @@ gem 'debugger'
 
 group :test do
   gem 'shoulda'
+  gem 'rspec-rails'
 end
 
 # Gems used only for assets and not required
